@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>geg</title>
+</head>
+
+<script>
+
+    function url(){
+        var url_js = document.getElementById("url_input").value;
+        document.getElementById("img").src=(url_js)
+
+
+    }
+
+    function aut(){
+
+        var data =document.getElementById("sir").value;
+        var data_b =document.getElementById("sir.b").value;
+        var data_bw =document.getElementById("sir.b/w").value;
+        var data_hue =document.getElementById("sir.hue").value;
+
+        document.getElementById("user").innerHTML=data;
+        document.getElementById("img").style.filter='contrast('+data+"%)"+'brightness('+data_b+"%)"+'grayscale('+data_bw+"%)"+'sepia('+data_hue+"%)";
+    //    document.getElementById("img").style.filter='brightness('+data_b+"%)";
+        // document.getElementById("img").style.filter='contrast('+data_bw+"%)";
+        // document.getElementById("img").style.filter='contrast('+data_hue+"%)";
+
+    }
+</script>
+<body>  
+    <button onclick="url()" id="url_but"></button>
+    <input id="url_input" type="url">
+
+    <h1 id="user" ></h1>
+    <input onclick="aut()" id="sir" type="range" max="1000" min="0" >
+    <input onclick="aut()" id="sir.b" type="range" max="1000" min="0">
+    <input onclick="aut()" id="sir.b/w" type="range" max="100" min="10">
+    <input onclick="aut()" id="sir.hue" type="range" max="1000" min="0">
+
+    <input type="button" onclick="get()">
+
+    <img id="img" class="img" src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2020/03/28/899734-pet-cat.jpg" alt="">
+
+    <style>
+
+
+
+        
+
+
+    </style>
+    
+</body>
+</html>
+
